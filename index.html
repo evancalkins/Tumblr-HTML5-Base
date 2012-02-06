@@ -1,0 +1,164 @@
+<html>
+
+  <head>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+      <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+  </head>
+  
+  <body>
+    
+    <div id="wrap">
+      
+      <div id="wrap-inner">
+    
+        <h1>{Title}</h1>
+      
+        <aside>
+  
+          {block:Description}
+              <p id="description">{Description}</p>
+          {/block:Description}
+  
+        <aside>
+  
+        <div id="main" role="main">
+    
+          {block:Posts}
+    
+            <!-- Text -->
+  
+            {block:Text}
+              <article class="post text">
+                {block:Title}
+                  <header>
+                    <h3><a href="{Permalink}">{Title}</a></h3>
+                  </header>
+                {/block:Title}
+                {Body}
+              </article>
+            {/block:Text}
+      
+            <!-- Photo -->
+
+            {block:Photo}
+              <article class="post photo">
+                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              </article>
+            {/block:Photo}
+
+            <!-- Photoset -->  
+
+            {block:Photoset}
+              <article class="post photoset">
+                {Photoset-500}
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              </article>
+            {/block:Photoset}
+
+            <!-- Quote -->
+
+            {block:Quote}
+              <article class="post quote">
+                "{Quote}"
+                {block:Source}
+                  <div class="source">{Source}</div>
+                {/block:Source}
+              </article>
+            {/block:Quote}
+
+            <!-- Link -->
+
+            {block:Link}
+              <article class="post link">
+                <a href="{URL}" class="link" {Target}>{Name}</a>
+                {block:Description}
+                  <div class="description">{Description}</div>
+                {/block:Description}
+              </article>
+            {/block:Link}
+
+            <!-- Chat -->
+      
+            {block:Chat}
+              <article class="post chat">
+                {block:Title}
+                  <header>
+                    <h3><a href="{Permalink}">{Title}</a></h3>
+                  </header>
+                {/block:Title}
+                <ul class="chat">
+                  {block:Lines}
+                    <li class="{Alt} user_{UserNumber}">
+                      {block:Label}
+                        <span class="label">{Label}</span>
+                      {/block:Label}
+                      {Line}
+                    </li>
+                  {/block:Lines}
+                </ul>
+              </article>
+            {/block:Chat}
+
+            <!-- Video -->
+
+            {block:Video}
+              <article class="post video">
+                {Video-500}
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              </article>
+            {/block:Video}
+      
+            <!-- Audio -->
+      
+            {block:Audio}
+              <article class="post audio">
+                {AudioPlayerBlack}
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              </article>
+            {/block:Audio}
+        
+        
+          {/block:Posts}
+      
+        </div>
+
+        <div id="paging">
+      
+          {block:PreviousPage}
+            <a href="{PreviousPage}">&#171; Previous</a>
+          {/block:PreviousPage}
+
+          {block:NextPage}
+            <a href="{NextPage}">Next &#187;</a>
+          {/block:NextPage}
+
+          <a href="/archive">Archive</a>
+      
+        </div>
+      
+      </div> <!-- Wrap Inner -->
+      
+      <footer role="contentinfo">
+        
+        <p>Footer content here.</p>
+        
+      </footer>
+    
+    </div> <!-- Wrap -->
+    
+  </body>
+    
+</html>
