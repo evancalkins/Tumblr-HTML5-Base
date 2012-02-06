@@ -1,0 +1,9 @@
+A simple Tumblr theme file with HTML5 markup instead of the base provided by the Tumblr theme docs.
+
+---
+
+There is an appearance text variable called 'Asset Path' in order to pull in an external stylesheet. Name your stylesheet 'style.css', or rename it within the style include in the header.
+
+---
+
+Please fork and contribute.
